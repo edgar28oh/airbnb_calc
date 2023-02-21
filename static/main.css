@@ -1,0 +1,14 @@
+body {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+div {
+    padding: 10px;
+}

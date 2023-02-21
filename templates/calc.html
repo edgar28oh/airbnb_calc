@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="static/main.css" />
+
+    <!-- The following link is used for bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <title>AirBnB Calc</title>
+  </head>
+  <body>
+    <h2>Information about the property</h2>
+    <form method="post" action="{{url_for('result') }}">
+      <div class="row">
+        <div class="col">
+          <label for="mortagePrice"> Mortgage Monthly Cost</label
+          ><input
+            type="number"
+            class="form-control"
+            name="mortg_monthly"
+            placeholder="$ Monthly Mortgage"
+          />
+        </div>
+
+        <div class="col">
+          <label for="mortagePrice"> HOA Monthly Cost</label
+          ><input
+            type="number"
+            class="form-control"
+            name="hoa_monthly"
+            placeholder="$ HOA Monthly"
+          />
+        </div>
+
+        <div class="col">
+          <label for="mortagePrice"> Electricity/Gas Monthly Cost</label
+          ><input
+            type="number"
+            class="form-control"
+            name="power_monthly"
+            placeholder="$ Electricity/Gas Monthly"
+          />
+        </div>
+        <div class="col">
+          <label for="internetPrice"> Internet Monthly Cost</label
+          ><input
+            type="number"
+            class="form-control"
+            name="wifi_monthly"
+            placeholder="$ Internet Monlty"
+          />
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="water_sewagePrice"> Water/Sewage Monthly Cost</label
+          ><input
+            type="number"
+            class="form-control"
+            name="water_sewage_monthly"
+            placeholder="$ Water/Sewage Monthly"
+          />
+        </div>
+        <div class="col">
+          <label for="otherPrice"> Other Monthly Expense</label
+          ><input
+            type="number"
+            class="form-control"
+            name="other_monthly"
+            placeholder="$ Other Monthly"
+          />
+        </div>
+      </div>
+
+      <h2>Information about the AirBnB prices and fees</h2>
+
+      <div class="row">
+        <!-- nightly rate-->
+        <div class="col">
+          <label for="nightly_rate"> Desired Rate</label
+          ><input
+            type="number"
+            class="form-control"
+            name="nightly_rate"
+            placeholder="$ Nightly Rate"
+          />
+        </div>
+        <!-- cleaning fee -->
+        <div class="col">
+          <label for="cleaningFee"> Cleaning Fee</label
+          ><input
+            type="number"
+            class="form-control"
+            name="cleaning_fee"
+            placeholder="$ Cleaning Fee"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- service fee-->
+        <div class="col">
+          <h5>
+            AirBnB Guest 14% Service Fee
+          </h5>
+        </div>
+        <!-- cleaning fee -->
+        <div class="col">
+          <h5>
+            AirBnB Host 3% Service Fee
+          </h5>
+        </div>
+        </div>
+      </div>
+
+
+      
+
+      <!-- AirBnB 3% fee-->
+  
+      <button type="submit" class="btn btn-primary">Calculate</button>
+    </form>
+
+    {% if calc_success == True %}
+    <div class="row">
+      <div class"col">
+        <h6> Monthly Mortgage: {{mortg_monthly_formatted}}</h6>
+      </div>
+      <div class"col">
+        <h6> Monthly WiFi: {{wifi_monthly_formatted}}</h6>
+      </div>
+      <div class"col">
+        <h6> Monthly Power: {{power_monthly_formatted}}</h6>
+      </div>
+      <div class"col">
+        <h6> Monthly HOA: {{hoa_monthly_formatted}}</h6>
+      </div>
+      <div class"col">
+        <h6> Other Monthly: {{other_monthly_formatted}}</h6>
+      </div>
+      <div class"col">
+        <h6> Water Monthly: {{water_sewage_monthly_formatted}}</h6>
+      </div>
+    </div>
+    
+
+
+    <h3>Yearly cost: {{yearly_result}}</h3>
+    <h3>Monthly cost: {{monthly_res}}</h3>
+    <h3>Break even nights: {{break_even}}</h3>
+    <h3>Guest rate: {{actual}}</h3>
+    <h3>Based on ipropertymanagement.com average 21 nights per month: {{gross_rev_formatted}}</h3>
+    <h3>Net revenue after 3% host fee and yearly expenses: {{net_rev_formatted}}</h3>
+    {% endif %}
+
+    <!-- The follwoing scripts are used for bootstrap -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
