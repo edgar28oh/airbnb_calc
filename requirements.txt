@@ -3,4 +3,8 @@ Flask==2.2.3
 itsdangerous==2.1.2
 Jinja2==3.1.2
 MarkupSafe==2.1.2
+<<<<<<< HEAD
 Werkzeug==2.2.3
+=======
+Werkzeug==2.2.3
+>>>>>>> 2eab6482d2af69638f74b67dd3be9d07f013a4ee
